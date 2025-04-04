@@ -1,12 +1,15 @@
-# Pixel borders
-### A Sass mixin to add pixelated borders to HTML elements, which can be customized for different sizes, styles and colour coding.
+# Pixel Borders Modern
+### A modernized version of Pixel Borders with updated SCSS syntax.
+
+This project is a modernized version of [Pixel Borders](https://github.com/NigelOToole/pixel-borders), originally created by Nigel O'Toole.  
+The original project has not been updated for several years, so I have improved it with modern SCSS syntax and better maintainability.
 
 ### [View demo](http://nigelotoole.github.io/pixel-borders/)
 
 
 ## Installation
 ```javascript
-$ npm install pixel-borders --save-dev
+$ npm install @girgir/pixel-borders-modern --save-dev
 ```
 
 ## Usage
@@ -16,13 +19,22 @@ $ npm install pixel-borders --save-dev
 After installation you can import it into your Sass files with the statement below.
 
 ```scss
-@import "node_modules/pixel-borders/src/styles/pixel-borders.scss";
+@use "node_modules/@girgir/pixel-borders-modern/src/styles/pixel-borders";
 ```
 
 You can also just import the mixins without the demo styles.
 
 ```scss
-@import "node_modules/pixel-borders/src/styles/pixel-borders/pixel-borders-mixins";
+@use "node_modules/@girgir/pixel-borders-modern/src/styles/pixel-borders/pixel-borders-mixins" as pb;
+
+// Then use with namespace
+@include pb.pixel-borders();
+
+// Or import everything directly
+@use "node_modules/@girgir/pixel-borders-modern/src/styles/pixel-borders/pixel-borders-mixins" as *;
+
+// Then use without namespace
+@include pixel-borders();
 ```
 
 #### Pixel borders mixin options
@@ -36,7 +48,8 @@ You can also just import the mixins without the demo styles.
   $corner-size: 1,                 
   $border-size: 4px,              
   $border-color: #000,            
-  $border-inset-color: false
+  $border-inset-color: false,
+  $border-image-width: null       // New parameter for custom border-image-width
 );
 
 // Helper method to create custom styles e.g. colour themes, inset border, highlight
@@ -62,6 +75,7 @@ You can also just import the mixins without the demo styles.
 | `$border-size`        | 4px     | Number(px)              | Border size.                                           |
 | `$border-color`       | \#000   | Hexadecimal color       | Border colour.                                         |
 | `$border-inset-color` | false   | False/Hexadecimal color | Add a inset border to the bottom right in this colour. |
+| `$border-image-width` | null    | null/size values        | Custom border-image-width values (e.g. '0 1 1 0').     |
 
 ### pixel-box
 
@@ -84,6 +98,14 @@ A class of .pixel-borders is applied all elements with a pixel border for demo p
 
 The pixel borders mixin comes with a number of classes defined to demonstrate how it can be used. These can be used as is but I would encourage users to create their own customized classes.
 
+### Improvements in this modern version
+
+1. Replaced `@import` with `@use`/`@forward` following modern SCSS conventions
+2. Added namespaced functions for color manipulation and string operations
+3. Added new `$border-image-width` parameter for more flexible border styling
+4. Improved code formatting for better readability and maintainability
+5. Updated dependencies to current versions
+
 ### Demo site
 
 Clone or download from Github.
@@ -97,6 +119,7 @@ Clone or download from Github.
 
 Inspired by the excellent [NES.css](https://nostalgic-css.github.io/NES.css/) which is a full NES-style CSS framework. Pixel borders is intended to be used where only the borders are required.
 
+Original project created by [Nigel O'Toole](https://github.com/NigelOToole).
 
 ### License
-MIT © Nigel O Toole
+MIT © Nigel O Toole, modernized by girgir

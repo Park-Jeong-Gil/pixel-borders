@@ -1,17 +1,17 @@
 {
-  "name": "pixel-borders",
-  "description": "Sass mixin to add pixelated borders to HTML elements.",
-  "version": "1.1.4",
+  "name": "@girgir/pixel-borders-modern",
+  "description": "A modernized version of Pixel Borders with updated SCSS syntax.",
+  "version": "1.0.0",
   "main": "src/styles/pixel-borders.scss",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NigelOToole/pixel-borders.git"
+    "url": "https://github.com/Park-Jeong-Gil/pixel-borders-modern.git"
   },
   "bugs": {
-    "url": "https://github.com/NigelOToole/pixel-borders/issues"
+    "url": "https://github.com/Park-Jeong-Gil/pixel-borders-modern/issues"
   },
-  "homepage": "https://github.com/NigelOToole/pixel-borders#readme",
-  "author": "Nigel O Toole <pure@purestructure.com> (http://www.purestructure.com)",
+  "homepage": "https://github.com/Park-Jeong-Gil/pixel-borders-modern#readme",
+  "author": "girgir",
   "license": "MIT",
   "keywords": [
     "sass",
@@ -19,10 +19,12 @@
     "pixel",
     "pixelated",
     "borders",
-    "css"
+    "css",
+    "modern",
+    "scss"
   ],
   "engines": {
-    "node": ">=4"
+    "node": ">=14"
   },
   "browserslist": [
     "> 1%",
